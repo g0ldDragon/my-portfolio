@@ -12,59 +12,23 @@ a:hover {
   color: var(--orange-web);
 }
 
-.carousel-container {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.carousel {
-  display: flex;
-  transition: transform 0.5s ease;
-}
-
-.carousel-slide {
-  width: 100vw;
-  flex-shrink: 0;
-  padding: 0 10px;
-  box-sizing: border-box;
-}
-
-.carousel-indicators {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-}
-
-.indicator {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: gray;
-  margin: 0 5px;
-}
-
-.indicator.active {
-  background-color: orange;
-}
-
-.carousel-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
-  border: none;
+.link-invert {
+  display: inline-block;
+  border: 1px solid orange;
+  border-radius: 12px;
+  padding: 20px;
+  color: white;
   background-color: transparent;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.link-invert:hover {
+  background-color: orange;
+  color: white;
+  text-decoration: none;
+}
+
+.link-invert:active {
+  background-color: white;
   color: orange;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.carousel-button.prev {
-  left: 10px;
-}
-
-.carousel-button.next {
-  right: 10px;
 }

@@ -5,12 +5,14 @@ import Header from "./components/Header";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import ProjectCard from "./components/ProjectCard";
+import Main from "./components/Main";
 
 const page: React.FC = () => {
   return (
     <>
       <Header />
       <main style={{ textAlign: "center" }}>
+        <Main />
         <About />
         <ProjectCard
           title={"Currency Converter Demo App"}
