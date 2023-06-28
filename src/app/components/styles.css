@@ -1,0 +1,70 @@
+/* styles.css */
+
+:root {
+  --orange-web: #fca311ff;
+  --black: #000000ff;
+  --oxford-blue: #14213dff;
+  --platinum: #e5e5e5ff;
+  --white: #ffffffff;
+}
+
+a:hover {
+  color: var(--orange-web);
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+  width: 100vw;
+  flex-shrink: 0;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: gray;
+  margin: 0 5px;
+}
+
+.indicator.active {
+  background-color: orange;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: transparent;
+  color: orange;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;
+}
