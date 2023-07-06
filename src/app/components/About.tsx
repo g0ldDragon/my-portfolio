@@ -1,6 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import Image from "next/image";
+import profilePic from "../../../public/images/me.jpeg";
+import edPic from "../../../public/images/tech-ed.jpg";
+import samurai from "../../../public/images/samuraiDrag.jpg"
 
 const About: React.FC = () => {
   return (
@@ -9,8 +12,8 @@ const About: React.FC = () => {
       <div className="grid grid-cols-2 gap-8 m-20" style={{ marginBlock: 40 }}>
         <div className="flex items-center">
           <Image
-            style={{ borderWidth: 1, borderColor: "white" }}
-            src="/path/to/image1.jpg"
+            style={{ borderRadius: 200 }}
+            src={profilePic}
             alt="Image 1"
             width={400}
             height={300}
@@ -19,7 +22,8 @@ const About: React.FC = () => {
         <div className="flex items-center">
           <p className="text-gray-700" style={{ textAlign: "left" }}>
             Hi there!
-            <br /><br />
+            <br />
+            <br />
             I'm Joshua Wilson, a driven Frontend Developer specializing in
             ReactJS, React Native, NextJS, and JavaScript. With a keen eye for
             detail and a passion for clean code, I'm always looking to enhance
@@ -57,8 +61,8 @@ const About: React.FC = () => {
         </div>
         <div className="flex items-center" style={{ marginLeft: 60 }}>
           <Image
-            style={{ borderWidth: 1, borderColor: "white" }}
-            src="/path/to/image2.jpg"
+            style={{ borderRadius: 11 }}
+            src={edPic}
             alt="Image 2"
             width={400}
             height={300}
@@ -99,8 +103,8 @@ const About: React.FC = () => {
       <div className="grid grid-cols-2 gap-8 m-20">
         <div className="flex items-center">
           <Image
-            style={{ borderWidth: 1, borderColor: "white" }}
-            src="/path/to/image3.jpg"
+            style={{ borderRadius: 11 }}
+            src={samurai}
             alt="Image 3"
             width={400}
             height={300}

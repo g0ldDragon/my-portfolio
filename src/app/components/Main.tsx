@@ -1,5 +1,7 @@
 import React from "react";
 import "./styles.css"; // Import the custom CSS file
+import Image from "next/image";
+import indigo from "../../../public/images/indigo.png"
 
 const Main: React.FC = () => {
   return (
@@ -20,9 +22,11 @@ const Main: React.FC = () => {
           </h3>
         </div>
         <div className="flex items-center justify-center bg-gray-100 rounded-lg mx-auto mb-4" style={{width: "28rem", height: "12rem"}}>
-          <img
-            src={"/public/images/IMG_5451.jpeg"}
+          <Image
+            src={indigo}
             alt="Project Image"
+            width={400}
+            height={400}
             className="rounded-lg w-full h-full"
           />
         </div>
