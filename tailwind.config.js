@@ -5,6 +5,7 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  mode: 'jit',
   theme: {
     extend: {
       backgroundImage: {
@@ -22,5 +23,4 @@ module.exports = {
     },
   },
   plugins: [],
-  purge: ["./src/**/*.{js,jsx,ts,tsx}"],
 };

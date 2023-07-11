@@ -1,9 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
+import HeaderLogo from './HeaderLogo';
 
 const Header = () => {
   return (
     <header className="flex items-center justify-between py-8 bg-black">
+      {/* <HeaderLogo /> */}
       <h1 className="text-white text-4xl font-bold ml-4">Joshua Wilson</h1>
       <div className="flex space-x-4 mr-4">
         <Link href="#about" passHref>

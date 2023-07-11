@@ -1,4 +1,20 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.mp4$/,
+      use: {
+        loader: "file-loader",
+        options: {
+          name: "[name].[ext]",
+          publicPath: "/videos",
+          outputPath: "static/videos",
+          esModule: false,
+        },
+      },
+    });
 
-module.exports = nextConfig
+    return config;
+  },
+};
+
+module.exports = nextConfig;

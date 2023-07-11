@@ -2,6 +2,7 @@
 
 import React from "react";
 import "./styles.css"; // Import the custom CSS file
+import { Center } from "@mantine/core"
 
 const Contact: React.FC = () => {
   const handleSubmit = (values: any) => {
@@ -50,18 +51,12 @@ const Contact: React.FC = () => {
             <br />
           </p>
         </div>
-        <div className="flex items-right">
-          <p className="text-gray-700">
-            Availability: Actively looking for work
-            <br />
-            <br />
-          </p>
-        </div>
-        <div className="flex items-right"></div>
-        <div className="flex items-right">
-          <p className="text-gray-700">Joshua Wilson @ 2023</p>
-        </div>
       </div>
+      <br/>
+      <br/>
+      <Center style={{textAlign: "center"}}>
+        <p className="text-gray-700">Joshua Wilson @ 2023</p>
+      </Center>
     </section>
   );
 };
