@@ -1,37 +1,43 @@
-import React, { useState, useEffect } from "react";
-import "./styles.css"; // Import the custom CSS file
+import React, { useState } from "react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import {
+  faTimes,
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 import currencyConvert1 from "../../../public/images/currencyConvert1.png";
-import currencyConvert2 from "../../../public/images/currencyConvert2.png";
-import currencyConvert3 from "../../../public/images/currencyConvert3.png";
+import angular from "../../../public/images/angular.png";
+import portfolio from "../../../public/images/portfolio-scrn.png";
 
 interface ProjectCardProps {
-  title: string;
-  description: string;
+  projects: {
+    title: string;
+    description: string;
+    githubLink: string;
+    linkedinLink: string;
+  }[];
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({
-  title,
-  description,
-}) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ projects }) => {
+  const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [currentImage, setCurrentImage] = useState(0);
-  const images = [currencyConvert1, currencyConvert2, currencyConvert3];
+  const { title, description, githubLink, linkedinLink } =
+    projects[currentProjectIndex];
+  const images = [currencyConvert1, angular, portfolio];
   const totalImages = images.length;
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImage((prevImage) => (prevImage + 1) % totalImages);
-    }, 3000);
+  const handlePrevProject = () => {
+    setCurrentProjectIndex(
+      (prevIndex) => (prevIndex - 1 + projects.length) % projects.length
+    );
+  };
 
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
+  const handleNextProject = () => {
+    setCurrentProjectIndex((prevIndex) => (prevIndex + 1) % projects.length);
+  };
 
   const handleToggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -42,14 +48,32 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   };
 
   return (
-    <div className="rounded-lg shadow-md m-4 p-20" id="projects" style={{backgroundColor: "#ffae00e8"}}>
+    <div
+      className="rounded-lg shadow-md m-4 p-20"
+      id="projects"
+      style={{ backgroundColor: "#ffae00e8" }}
+    >
       <h3 className="text-xl font-bold mb-4 text-oxford-blue">{title}</h3>
-      <div className="flex items-center justify-center bg-gray-100 rounded-lg w-40 h-60 mx-auto mb-4">
-        <Image
-          src={images[currentImage]}
-          alt="Project Image"
-          className="rounded-lg w-full h-full"
-        />
+      <div className="relative">
+        <button
+          className="absolute top-1/2 left-0 transform -translate-y-1/2 text-oxford-blue hover:text-white"
+          onClick={handlePrevProject}
+        >
+          <FontAwesomeIcon icon={faChevronLeft} size="2x" />
+        </button>
+        <button
+          className="absolute top-1/2 right-0 transform -translate-y-1/2 text-oxford-blue hover:text-white"
+          onClick={handleNextProject}
+        >
+          <FontAwesomeIcon icon={faChevronRight} size="2x" />
+        </button>
+        <div className="flex items-center justify-center bg-gray-100 rounded-lg w-40 h-60 mx-auto mb-4">
+          <Image
+            src={images[currentProjectIndex]}
+            alt="Project Image"
+            className="rounded-lg w-full h-full"
+          />
+        </div>
       </div>
       <p className="text-oxford-blue mb-4">{description}</p>
       <div className="relative">
@@ -77,9 +101,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                     />
                   </div>
                   <div className="ml-2">
-                    <p className="text-white mb-4 hover:text-oxford-blue">
+                    <a
+                      href={githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white mb-4 hover:text-oxford-blue"
+                    >
                       Github Repository
-                    </p>
+                    </a>
                   </div>
                 </div>
               </li>
@@ -93,9 +122,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                     />
                   </div>
                   <div className="ml-2">
-                    <p className="text-white-700 mb-4 hover:text-oxford-blue">
+                    <a
+                      href={linkedinLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white-700 mb-4 hover:text-oxford-blue"
+                    >
                       LinkedIn Profile
-                    </p>
+                    </a>
                   </div>
                 </div>
               </li>
