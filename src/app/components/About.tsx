@@ -46,21 +46,21 @@ const About: React.FC = () => {
         <div className="flex items-center">
           <p className="text-gray-700" style={{ textAlign: "left" }}>
             <text className="text-orange-web">
-              are the cornerstones of my work ethic. When I'm not immersed in
-              Transparency, efficiency, relationships, trust, and accountability
-            </text>
+              Transparency, efficiency, relationships, trust, and accountability  
+            </text>{" "}
+             are the cornerstones of my work ethic. When I'm not immersed in
             coding, you'll find me on the squash court, always up for a
             challenging match. I have a silent passion for health, fitness, and
             nutrition, constantly seeking self-improvement. Embracing the
             <text className="text-orange-web">
-              philosophy of growing by 1% every day
+              {" "}philosophy of growing by 1% every day{" "}
             </text>
             fuels my personal development journey.
             <br />
             <br />
             <br />
             My educational background includes a 3-year course at
-            <text className="text-orange-web">CTU Training Solutions</text> in
+            <text className="text-orange-web">{" "}CTU Training Solutions</text> in
             Boksburg, where I obtained an NQF level 6 in IT Database Development
             in 2022. Additionally, I hold several certifications, including a
             National Certificate in IT Systems Development, FET Certificate in
@@ -99,9 +99,9 @@ const About: React.FC = () => {
           Though my work experience in the industry is limited, I embarked on a
           6-month internship as a fullstack developer intern at Northroom
           Technologies, gaining valuable insights and honing my
-          <text className="text-orange-web">frontend development skills</text>.
+          <text className="text-orange-web">{" "}frontend development skills</text>.
           Now, I'm eager to broaden my skillset and embrace the challenges of
-          <text className="text-orange-web">backend development</text> to become
+          <text className="text-orange-web">{" "}backend development</text> to become
           a well-rounded Fullstack Developer.
           <br />
           <br />
@@ -110,7 +110,7 @@ const About: React.FC = () => {
           Server, T-SQL, and more. Alongside my technical expertise, I bring a
           problem-solving mindset,
           <text className="text-orange-web">
-            meticulous attention to detail
+            {" "}meticulous attention to detail
           </text>
           , and a highly motivated work ethic.
           <br />
@@ -121,7 +121,7 @@ const About: React.FC = () => {
           navigational structures, crafting components, and implementing
           functionality. You can
           <text className="text-orange-web">
-            explore some of these projects
+            {" "}explore some of these projects{" "}
           </text>
           in my GitHub repository.
           <br />
@@ -150,7 +150,7 @@ const About: React.FC = () => {
             What drives me is the belief that technology, when harnessed
             effectively, can have a profound
             <text className="text-orange-web">
-              positive impact on the world
+              {" "}positive impact on the world
             </text>
             . I'm committed to providing sophisticated, high-functioning, and
             visually pleasing web and mobile solutions that empower businesses
@@ -188,7 +188,7 @@ const About: React.FC = () => {
           Dive into my projects, explore my code repositories. Whether you're
           seeking a talented frontend developer or a dedicated problem-solver,
           <text className="text-orange-web">
-            I'm here to bring your ideas to life
+            {" "}I'm here to bring your ideas to life
           </text>
           . Let's connect and embark on this digital adventure together! Feel
           free to reach out to me via email, phone, or through my social media
